@@ -3,43 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cervelet - Rejoindre la Bêta</title>
+    <title>Cervelet - Accès Bêta</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --pink: #FF85A1; --dark-bg: #121212; --card-bg: #1e1e1e; --text: #e0e0e0; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--dark-bg); color: var(--text); margin: 0; text-align: center; }
-        .container { max-width: 600px; margin: auto; padding: 40px 20px; }
-        .icon-circle { width: 80px; height: 80px; background: #2a2a2a; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 2px solid var(--pink); color: var(--pink); font-size: 2em; }
-        h1 { color: white; }
-        .step { background: var(--card-bg); padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 1px solid #333; text-align: left; }
-        .step-number { background: var(--pink); color: black; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 10px; }
-        .btn { display: block; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 15px; text-align: center; transition: 0.3s; }
-        .btn-group { background: white; color: black; }
-        .btn-play { background: #34a853; color: white; }
-        .btn:hover { opacity: 0.8; transform: scale(1.02); }
-        .info { font-size: 0.9em; color: #888; margin-top: 30px; }
+        :root { --pink: #FF85A1; --dark-bg: #0F0F0F; --card-bg: #1A1A1A; --text: #F0F0F0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--dark-bg); color: var(--text); margin: 0; text-align: center; line-height: 1.6; }
+        .container { max-width: 500px; margin: auto; padding: 60px 20px; }
+        
+        .icon-circle { width: 80px; height: 80px; background: #222; border-radius: 25px; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; border: 2px solid var(--pink); box-shadow: 0 0 20px rgba(255, 133, 161, 0.2); }
+        h1 { font-size: 2em; margin-bottom: 10px; color: white; }
+        .subtitle { color: #888; margin-bottom: 40px; font-size: 1em; }
+
+        .step { background: var(--card-bg); padding: 25px; border-radius: 20px; border: 1px solid #333; text-align: left; margin-bottom: 20px; position: relative; }
+        .step-num { position: absolute; top: -15px; left: 20px; background: var(--pink); color: black; font-weight: bold; padding: 5px 15px; border-radius: 10px; font-size: 0.8em; }
+        
+        .btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: bold; margin-top: 15px; transition: 0.3s; }
+        .btn-white { background: white; color: black; }
+        .btn-pink { background: var(--pink); color: black; }
+        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
+
+        .warning { background: rgba(255, 193, 7, 0.1); border: 1px solid #ffc107; color: #ffc107; padding: 15px; border-radius: 12px; font-size: 0.85em; margin-top: 20px; text-align: left; display: flex; gap: 10px; }
+        
+        .footer-links { margin-top: 40px; }
+        .footer-links a { color: #555; text-decoration: none; font-size: 0.9em; transition: 0.3s; }
+        .footer-links a:hover { color: var(--pink); }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <div class="icon-circle"><i class="fas fa-flask"></i></div>
-        <h1>Devenir Testeur Bêta</h1>
-        <p>Merci de nous aider à améliorer <strong>Cervelet</strong> ! Suis ces deux étapes pour installer l'application.</p>
+        <div class="icon-circle">
+            <i class="fas fa-vial" style="font-size: 2em; color: var(--pink);"></i>
+        </div>
+        
+        <h1>Devenir Testeur</h1>
+        <p class="subtitle">Suis ces étapes pour installer l'application sur ton Android.</p>
 
         <div class="step">
-            <p><span class="step-number">1</span> <strong>Rejoins le groupe de test</strong></p>
-            <p style="font-size: 0.9em; color: #aaa;">Google demande que tu fasses partie du groupe pour t'autoriser le téléchargement.</p>
-            <a href="URL_DE_TON_GROUPE_GOOGLE" class="btn btn-group" target="_blank">S'inscrire au groupe</a>
+            <div class="step-num">ÉTAPE 1</div>
+            <p><strong>Rejoins le groupe Google</strong></p>
+            <p style="font-size: 0.85em; color: #888;">C'est obligatoire pour que Google t'autorise l'accès à la version de test.</p>
+            <a href="https://groups.google.com/g/testeurs-cervelet" class="btn btn-white" target="_blank">Rejoindre le groupe</a>
         </div>
 
         <div class="step">
-            <p><span class="step-number">2</span> <strong>Télécharge l'application</strong></p>
-            <p style="font-size: 0.9em; color: #aaa;">Une fois inscrit au groupe, tu peux accéder à la fiche Play Store.</p>
-            <a href="URL_DE_TON_LIEN_TEST_PLAYSTORE" class="btn btn-play" target="_blank"><i class="fab fa-google-play"></i> Aller sur le Play Store</a>
+            <div class="step-num">ÉTAPE 2</div>
+            <p><strong>Télécharge sur le Play Store</strong></p>
+            <p style="font-size: 0.85em; color: #888;">Une fois dans le groupe, accepte l'invitation sur le store.</p>
+            <a href="https://play.google.com/apps/testing/com.roussel.Cervelet" class="btn btn-pink" target="_blank">
+                <i class="fab fa-google-play"></i> Accéder au test
+            </a>
         </div>
 
-        <p class="info">Un problème ? Contacte-nous sur <a href="mailto:grenardapp@gmail.com" style="color: var(--pink);">grenardapp@gmail.com</a></p>
-        <a href="index.html" style="color: #555; text-decoration: none; font-size: 0.8em;">← Retour au site</a>
+        <div class="warning">
+            <i class="fas fa-exclamation-triangle" style="margin-top: 3px;"></i>
+            <span>Si le lien de l'étape 2 affiche une erreur "URL introuvable", patiente 2 minutes que Google valide ton inscription au groupe.</span>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html"><i class="fas fa-arrow-left"></i> Retour au site</a>
+            <span style="color: #333; margin: 0 15px;">|</span>
+            <a href="mailto:grenardapp@gmail.com">Un problème ?</a>
+        </div>
     </div>
+
 </body>
 </html>
