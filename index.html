@@ -8,55 +8,39 @@
     <style>
         :root { --pink: #FF85A1; --dark-bg: #121212; --card-bg: #1e1e1e; --text: #e0e0e0; }
         body { font-family: 'Inter', sans-serif; background-color: var(--dark-bg); color: var(--text); margin: 0; line-height: 1.6; }
-        
         header { padding: 80px 20px; text-align: center; background: radial-gradient(circle at top, #2c3e50 0%, var(--dark-bg) 100%); }
-        .logo { width: 120px; border-radius: 25px; margin-bottom: 20px; border: 2px solid var(--pink); }
-        
+        .logo { width: 120px; border-radius: 25px; margin-bottom: 20px; border: 2px solid var(--pink); box-shadow: 0 0 15px rgba(255, 133, 161, 0.3); }
         .container { max-width: 1100px; margin: auto; padding: 20px; }
-        
         .badge-row { margin: 20px 0; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .badge { background: var(--pink); color: black; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9em; }
-
         .section-title { text-align: center; color: var(--pink); margin-top: 60px; }
-        
-        /* Grid Layout */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
         .card { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 1px solid #333; transition: 0.3s; }
         .card:hover { border-color: var(--pink); transform: translateY(-5px); }
-        
-        /* Screenshots */
         .screenshots { display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; justify-content: center; }
         .screenshots img { height: 400px; border-radius: 15px; border: 3px solid #333; }
-
-        /* Subjects */
         .subject-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-top: 20px; }
         .subject-item { background: #2a2a2a; padding: 10px; border-radius: 10px; text-align: center; border: 1px solid #444; }
-
         .btn { display: inline-block; padding: 15px 30px; border-radius: 30px; font-weight: bold; text-decoration: none; margin: 10px; transition: 0.3s; }
         .btn-tiktok { background: white; color: black; }
         .btn-contact { background: transparent; color: var(--pink); border: 2px solid var(--pink); }
-
         footer { text-align: center; padding: 60px 20px; border-top: 1px solid #333; margin-top: 80px; background: #0a0a0a; }
         .footer-links a { color: #888; text-decoration: none; margin: 0 15px; }
-        .footer-links a:hover { color: var(--pink); }
     </style>
 </head>
 <body>
-
 <header>
-    <img src="assets/icon.png" alt="Cervelet Logo" class="logo" onerror="this.src='https://via.placeholder.com/120/FF85A1/000000?text=Cervelet'">
+    <img src="icon.png" alt="Cervelet Logo" class="logo" onerror="this.src='https://via.placeholder.com/120/FF85A1/000000?text=Cervelet'">
     <h1 style="font-size: 3em; margin: 0;">Cervelet</h1>
     <p style="color: #aaa; font-size: 1.2em;">L'application qui rend le collège plus facile.</p>
-    
     <div class="badge-row">
         <span class="badge">6ème à la 3ème</span>
-        <span class="badge">Quiz & Révisions</span>
-        <span class="badge">XP & Level</span>
+        <span class="badge">Quiz Interactifs</span>
+        <span class="badge">Classement Mondial</span>
     </div>
 </header>
 
 <div class="container">
-    
     <h2 class="section-title">Aperçu de l'application</h2>
     <div class="screenshots">
         <img src="screen1.png" alt="Capture 1" onerror="this.style.display='none'">
@@ -65,16 +49,16 @@
 
     <div class="grid">
         <div class="card">
-            <h3><i class="fas fa-brain" style="color: var(--pink);"></i> Concept</h3>
-            <p>Choisis ta classe, ta matière et révise en t'amusant. Pas de longs textes, juste de l'action pour préparer ton Brevet ou tes DS sans stress.</p>
+            <h3><i class="fas fa-trophy" style="color: #f1c40f;"></i> Classement & Compétition</h3>
+            <p>Gagne de l'XP à chaque bonne réponse et grimpe dans le scoreboard mondial. Compare tes scores avec les élèves de toute la France !</p>
         </div>
         <div class="card">
             <h3><i class="fas fa-heart" style="color: #e74c3c;"></i> Système de Survie</h3>
-            <p>Chaque erreur te coûte un cœur. Gagne de l'XP, protège tes flammes (streaks) et grimpe dans le scoreboard mondial !</p>
+            <p>Attention ! Chaque erreur te coûte un cœur. Révise intelligemment pour garder tes vies et enchaîner les victoires.</p>
         </div>
     </div>
 
-    <h2 class="section-title">Matières & Cours</h2>
+    <h2 class="section-title">Matières au Programme</h2>
     <div class="subject-grid">
         <div class="subject-item">📐 Maths</div>
         <div class="subject-item">🇫🇷 Français</div>
@@ -86,22 +70,19 @@
     </div>
 
     <div style="text-align: center; margin-top: 60px;">
-        <h3>Un problème ? Une suggestion ?</h3>
-        <p>Contactez le support Grenard App pour toute question technique ou ajout de contenu.</p>
+        <h3>Besoin d'aide ou de nouveaux cours ?</h3>
+        <p>Contactez le support Grenard App pour toute suggestion.</p>
         <a href="https://www.tiktok.com/@votre_compte" class="btn btn-tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
         <a href="mailto:grenardapp@gmail.com" class="btn btn-contact"><i class="fas fa-envelope"></i> Contact Pro</a>
     </div>
-
 </div>
 
 <footer>
-    <p>Propulsé par <strong>Grenard App</strong></p>
+    <p>Développé par <strong>Grenard App</strong></p>
     <div class="footer-links">
         <a href="privacy.html">Confidentialité</a>
         <a href="mailto:grenardapp@gmail.com">Support Technique</a>
     </div>
-    <p style="margin-top: 20px; font-size: 0.8em; color: #555;">© 2026 Grenard App. Tous droits réservés.</p>
 </footer>
-
 </body>
 </html>
