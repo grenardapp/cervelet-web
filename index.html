@@ -6,10 +6,10 @@
     <title>Cervelet - L'app des collégiens</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --pink: #FF85A1; --dark-bg: #121212; --card-bg: #1e1e1e; --text: #e0e0e0; }
+        :root { --pink: #FF85A1; --dark-bg: #121212; --card-bg: #1e1e1e; --text: #e0e0e0; --play-green: #34a853; }
         body { font-family: 'Inter', sans-serif; background-color: var(--dark-bg); color: var(--text); margin: 0; line-height: 1.6; }
         
-        header { padding: 80px 20px; text-align: center; background: radial-gradient(circle at top, #2c3e50 0%, var(--dark-bg) 100%); }
+        header { padding: 60px 20px; text-align: center; background: radial-gradient(circle at top, #2c3e50 0%, var(--dark-bg) 100%); }
         .logo { width: 120px; border-radius: 25px; margin-bottom: 20px; border: 2px solid var(--pink); box-shadow: 0 0 15px rgba(255, 133, 161, 0.3); }
         
         .container { max-width: 1100px; margin: auto; padding: 20px; }
@@ -18,16 +18,33 @@
         .badge-row { margin: 20px 0; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .badge { background: var(--pink); color: black; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9em; }
 
-        /* Galerie de captures centrée */
+        /* Bouton Google Play Principal */
+        .cta-playstore {
+            background-color: #000;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: bold;
+            border: 2px solid #444;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .cta-playstore:hover { border-color: var(--pink); transform: translateY(-3px); background: #1a1a1a; }
+        .cta-playstore i { font-size: 1.8em; color: var(--play-green); }
+        .cta-text { display: flex; flex-direction: column; text-align: left; line-height: 1.2; }
+        .cta-small { font-size: 0.7em; font-weight: normal; opacity: 0.8; }
+
         .screenshots-container { display: flex; justify-content: center; width: 100%; }
         .screenshots { display: flex; gap: 15px; overflow-x: auto; padding: 20px; scroll-behavior: smooth; max-width: 100%; }
-        .screenshots img { height: 450px; border-radius: 20px; border: 2px solid #333; flex-shrink: 0; transition: 0.3s; }
-        .screenshots img:hover { border-color: var(--pink); transform: scale(1.02); }
+        .screenshots img { height: 450px; border-radius: 20px; border: 2px solid #333; flex-shrink: 0; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
         .card { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 1px solid #333; }
 
-        /* Matières en ligne de 4 */
         .subject-grid { 
             display: grid; 
             grid-template-columns: repeat(4, 1fr); 
@@ -37,7 +54,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
         .subject-item { background: #2a2a2a; padding: 15px; border-radius: 12px; text-align: center; border: 1px solid #444; font-weight: bold; }
 
         @media (max-width: 768px) {
@@ -47,7 +63,6 @@
 
         .btn { display: inline-block; padding: 15px 30px; border-radius: 30px; font-weight: bold; text-decoration: none; margin: 10px; transition: 0.3s; }
         .btn-tiktok { background: white; color: black; }
-        .btn-contact { background: transparent; color: var(--pink); border: 2px solid var(--pink); }
         
         footer { text-align: center; padding: 60px 20px; border-top: 1px solid #333; margin-top: 80px; background: #0a0a0a; }
         .footer-links a { color: #888; text-decoration: none; margin: 0 15px; }
@@ -56,36 +71,43 @@
 <body>
 
 <header>
-    <img src="icon.png" alt="Cervelet Logo" class="logo" onerror="this.src='https://via.placeholder.com/120/FF85A1/000000?text=Cervelet'">
+    <img src="icon.png" alt="Cervelet Logo" class="logo">
     <h1 style="font-size: 3em; margin: 0;">Cervelet</h1>
-    <p style="color: #aaa; font-size: 1.2em;">L'application qui rend le collège plus facile.</p>
+    
     <div class="badge-row">
         <span class="badge">6ème à la 3ème</span>
-        <span class="badge">Quiz Interactifs</span>
         <span class="badge">Classement Mondial</span>
     </div>
+
+    <a href="URL_DU_GROUPE_GOOGLE_OU_LIEN_TEST" class="cta-playstore">
+        <i class="fab fa-google-play"></i>
+        <div class="cta-text">
+            <span class="cta-small">Disponible en test sur</span>
+            <span>Google Play</span>
+        </div>
+    </a>
+    <p style="color: #FF85A1; font-size: 0.9em; margin-top: 10px; font-weight: bold;">(Phase de test : rejoignez le groupe pour accéder !)</p>
 </header>
 
 <div class="container">
-    
     <h2 class="section-title">Aperçu de l'application</h2>
     <div class="screenshots-container">
         <div class="screenshots">
-            <img src="screen0.png" alt="Capture 0" onerror="this.style.display='none'">
-            <img src="screen1.png" alt="Capture 1" onerror="this.style.display='none'">
-            <img src="screen2.png" alt="Capture 2" onerror="this.style.display='none'">
-            <img src="screen3.png" alt="Capture 3" onerror="this.style.display='none'">
+            <img src="screen0.png" alt="Capture 0">
+            <img src="screen1.png" alt="Capture 1">
+            <img src="screen2.png" alt="Capture 2">
+            <img src="screen3.png" alt="Capture 3">
         </div>
     </div>
 
     <div class="grid">
         <div class="card">
             <h3><i class="fas fa-trophy" style="color: #f1c40f;"></i> Classement & Compétition</h3>
-            <p>Gagne de l'XP à chaque bonne réponse et grimpe dans le scoreboard mondial. Compare tes scores avec les élèves de toute la France !</p>
+            <p>Gagne de l'XP à chaque bonne réponse et grimpe dans le scoreboard mondial.</p>
         </div>
         <div class="card">
-            <h3><i class="fas fa-heart" style="color: #e74c3c;"></i> Système de Survie</h3>
-            <p>Attention ! Chaque erreur te coûte un cœur. Révise intelligemment pour garder tes vies et enchaîner les victoires.</p>
+            <h3><i class="fas fa-vial" style="color: #3498db;"></i> Rejoindre le test</h3>
+            <p>L'application est en phase de perfectionnement. En téléchargeant la bêta, vous aidez Grenard App à créer le meilleur outil pour les collégiens.</p>
         </div>
     </div>
 
@@ -100,21 +122,13 @@
         <div class="subject-item">🌿 SVT</div>
         <div class="subject-item">🎓 Brevet</div>
     </div>
-
-    <div style="text-align: center; margin-top: 60px;">
-        <h3>Besoin d'aide ou de nouveaux cours ?</h3>
-        <p>Contactez le support Grenard App pour toute suggestion.</p>
-        <a href="https://www.tiktok.com/@votre_compte" class="btn btn-tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
-        <a href="mailto:grenardapp@gmail.com" class="btn btn-contact"><i class="fas fa-envelope"></i> Contact Pro</a>
-    </div>
-
 </div>
 
 <footer>
     <p>Développé par <strong>Grenard App</strong></p>
     <div class="footer-links">
         <a href="privacy.html">Confidentialité</a>
-        <a href="mailto:grenardapp@gmail.com">Contact</a>
+        <a href="mailto:grenardapp@gmail.com">Contact Pro</a>
     </div>
 </footer>
 
