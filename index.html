@@ -3,69 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cervelet - L'app des collégiens</title>
+    <title>Cervelet - Deviens un pro du collège !</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --pink: #FF85A1; --dark-bg: #121212; --card-bg: #1e1e1e; --text: #e0e0e0; --play-green: #34a853; }
+        :root { --pink: #FF85A1; --dark-bg: #0F0F0F; --card-bg: #1A1A1A; --text: #F0F0F0; }
         body { font-family: 'Inter', sans-serif; background-color: var(--dark-bg); color: var(--text); margin: 0; line-height: 1.6; }
         
-        header { padding: 60px 20px; text-align: center; background: radial-gradient(circle at top, #2c3e50 0%, var(--dark-bg) 100%); }
-        .logo { width: 120px; border-radius: 25px; margin-bottom: 20px; border: 2px solid var(--pink); box-shadow: 0 0 15px rgba(255, 133, 161, 0.3); }
+        header { padding: 80px 20px; text-align: center; background: radial-gradient(circle at top, #243447 0%, var(--dark-bg) 100%); }
+        .logo { width: 120px; border-radius: 25px; margin-bottom: 20px; border: 3px solid var(--pink); box-shadow: 0 0 20px rgba(255, 133, 161, 0.4); }
         
         .container { max-width: 1100px; margin: auto; padding: 20px; }
-        .section-title { text-align: center; color: var(--pink); margin-top: 60px; margin-bottom: 30px; width: 100%; }
+        .section-title { text-align: center; color: var(--pink); margin-top: 60px; font-size: 1.8em; text-transform: uppercase; }
         
-        .badge-row { margin: 20px 0; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .badge { background: var(--pink); color: black; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 0.9em; }
-
-        /* Bouton Google Play Principal */
+        /* Bouton Store */
         .cta-playstore {
-            background-color: #000;
-            color: white;
-            padding: 15px 35px;
-            border-radius: 12px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            font-weight: bold;
-            border: 2px solid #444;
-            transition: 0.3s;
-            margin-top: 20px;
+            background-color: #000; color: white; padding: 12px 25px; border-radius: 12px;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 12px;
+            font-weight: bold; border: 2px solid #333; transition: 0.3s;
         }
-        .cta-playstore:hover { border-color: var(--pink); transform: translateY(-3px); background: #1a1a1a; }
-        .cta-playstore i { font-size: 1.8em; color: var(--play-green); }
-        .cta-text { display: flex; flex-direction: column; text-align: left; line-height: 1.2; }
-        .cta-small { font-size: 0.7em; font-weight: normal; opacity: 0.8; }
+        .cta-playstore:hover { border-color: var(--pink); transform: translateY(-3px); }
 
-        .screenshots-container { display: flex; justify-content: center; width: 100%; }
-        .screenshots { display: flex; gap: 15px; overflow-x: auto; padding: 20px; scroll-behavior: smooth; max-width: 100%; }
-        .screenshots img { height: 450px; border-radius: 20px; border: 2px solid #333; flex-shrink: 0; }
+        /* Description Longue */
+        .main-desc { text-align: center; max-width: 800px; margin: 40px auto; font-size: 1.1em; color: #bbb; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 1px solid #333; }
+        /* Grid de Features */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 1px solid #222; text-align: left; }
+        .card i { color: var(--pink); font-size: 2em; margin-bottom: 15px; display: block; }
+        .card h3 { margin-top: 0; color: white; }
+        .card ul { padding-left: 20px; color: #aaa; font-size: 0.9em; }
 
-        .subject-grid { 
-            display: grid; 
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 15px; 
-            margin-top: 20px; 
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .subject-item { background: #2a2a2a; padding: 15px; border-radius: 12px; text-align: center; border: 1px solid #444; font-weight: bold; }
+        /* Section Screenshots */
+        .screenshots { display: flex; gap: 15px; overflow-x: auto; padding: 20px 0; }
+        .screenshots img { height: 400px; border-radius: 20px; border: 3px solid #333; flex-shrink: 0; }
 
-        @media (max-width: 768px) {
-            .subject-grid { grid-template-columns: repeat(2, 1fr); }
-            .screenshots img { height: 350px; }
-        }
+        /* Matières */
+        .subject-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 30px; }
+        .subject-item { background: #222; padding: 15px; border-radius: 12px; text-align: center; border: 1px solid #333; font-weight: bold; }
 
-        .btn { display: inline-block; padding: 15px 30px; border-radius: 30px; font-weight: bold; text-decoration: none; margin: 10px; transition: 0.3s; }
-        .btn-tiktok { background: white; color: black; }
-        
-        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #333; margin-top: 80px; background: #0a0a0a; }
-        .footer-links a { color: #888; text-decoration: none; margin: 0 15px; }
+        @media (max-width: 768px) { .subject-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #222; margin-top: 80px; color: #666; }
     </style>
 </head>
 <body>
@@ -73,45 +51,68 @@
 <header>
     <img src="icon.png" alt="Cervelet Logo" class="logo">
     <h1 style="font-size: 3em; margin: 0;">Cervelet</h1>
+    <p style="color: var(--pink); font-weight: bold;">L'app qui booste tes notes sans stress.</p>
     
-    <div class="badge-row">
-        <span class="badge">6ème à la 3ème</span>
-        <span class="badge">Classement Mondial</span>
+    <div style="margin-top: 30px;">
+        <a href="test.html" class="cta-playstore">
+            <i class="fab fa-google-play"></i>
+            <div style="text-align: left; line-height: 1.2;">
+                <span style="font-size: 0.7em; font-weight: normal; opacity: 0.7;">Bientôt sur</span><br>
+                <span>Google Play</span>
+            </div>
+        </a>
+        <p style="font-size: 0.8em; color: #888; margin-top: 10px;">Phase de test : rejoignez le groupe pour accéder.</p>
     </div>
-
-    <a href="test.html" class="cta-playstore">
-        <i class="fab fa-google-play"></i>
-        <div class="cta-text">
-            <span class="cta-small">Disponible en test sur</span>
-            <span>Google Play</span>
-        </div>
-    </a>
-    <p style="color: #FF85A1; font-size: 0.9em; margin-top: 10px; font-weight: bold;">(Phase de test : rejoignez le groupe pour accéder !)</p>
 </header>
 
 <div class="container">
-    <h2 class="section-title">Aperçu de l'application</h2>
-    <div class="screenshots-container">
-        <div class="screenshots">
-            <img src="screen0.png" alt="Capture 0">
-            <img src="screen1.png" alt="Capture 1">
-            <img src="screen2.png" alt="Capture 2">
-            <img src="screen3.png" alt="Capture 3">
-        </div>
+    
+    <section class="main-desc">
+        <h2>Tu veux cartonner tes contrôles ?</h2>
+        <p>Oublie les leçons compliquées. Avec <strong>Cervelet</strong>, tu passes à l'action. Choisis ta classe, ta matière, et lance des séries de quiz rapides. Que ce soit pour préparer le Brevet ou assurer au prochain DS, notre petit cerveau rose t'accompagne partout !</p>
+    </section>
+
+    <div class="screenshots">
+        <img src="screen0.png" alt="Home">
+        <img src="screen1.png" alt="Quiz">
+        <img src="screen2.png" alt="Classement">
+        <img src="screen3.png" alt="Profil">
     </div>
 
     <div class="grid">
         <div class="card">
-            <h3><i class="fas fa-trophy" style="color: #f1c40f;"></i> Classement & Compétition</h3>
-            <p>Gagne de l'XP à chaque bonne réponse et grimpe dans le scoreboard mondial.</p>
+            <i class="fas fa-heart"></i>
+            <h3>Système de Survie</h3>
+            <p>Apprendre en faisant des erreurs, c'est fait pour ça ! Mais attention :</p>
+            <ul>
+                <li>Stock de cœurs limité</li>
+                <li>Perte de vie à chaque erreur</li>
+                <li>Publicités récompensées pour gagner des vies</li>
+            </ul>
         </div>
         <div class="card">
-            <h3><i class="fas fa-vial" style="color: #3498db;"></i> Rejoindre le test</h3>
-            <p>L'application est en phase de perfectionnement. En téléchargeant la bêta, vous aidez Grenard App à créer le meilleur outil pour les collégiens.</p>
+            <i class="fas fa-fire"></i>
+            <h3>L'Assiduité (Streaks)</h3>
+            <p>La clé du succès, c'est la régularité. Ne laisse pas tes flammes s'éteindre :</p>
+            <ul>
+                <li>Flammes globales pour ton assiduité</li>
+                <li>Notifications de rappel intelligentes</li>
+                <li>Bonus d'XP pour les séries longues</li>
+            </ul>
+        </div>
+        <div class="card">
+            <i class="fas fa-trophy"></i>
+            <h3>Scoreboard Mondial</h3>
+            <p>Mesure-toi aux élèves de toute la France et grimpe les échelons :</p>
+            <ul>
+                <li>Classement par XP en temps réel</li>
+                <li>Badges exclusifs à débloquer</li>
+                <li>Filtres par chapitre et difficulté</li>
+            </ul>
         </div>
     </div>
 
-    <h2 class="section-title">Matières au Programme</h2>
+    <h2 class="section-title">Programmes Officiels</h2>
     <div class="subject-grid">
         <div class="subject-item">📐 Maths</div>
         <div class="subject-item">🇫🇷 Français</div>
@@ -120,16 +121,19 @@
         <div class="subject-item">🌍 Géo</div>
         <div class="subject-item">🧪 Physique</div>
         <div class="subject-item">🌿 SVT</div>
-        <div class="subject-item">🎓 Brevet</div>
+        <div class="subject-item">🔴 Bonus</div>
     </div>
+
+    <div style="margin-top: 60px; background: #111; padding: 40px; border-radius: 20px; border: 1px dashed #333; text-align: center;">
+        <h3>Progression & Data</h3>
+        <p style="color: #888;">Grâce à Firestore et notre système <i>updateModelProgress</i>, ton XP et tes cœurs sont synchronisés en temps réel sur tous tes appareils.</p>
+    </div>
+
 </div>
 
 <footer>
-    <p>Développé par <strong>Grenard App</strong></p>
-    <div class="footer-links">
-        <a href="privacy.html">Confidentialité</a>
-        <a href="mailto:grenardapp@gmail.com">Contact Pro</a>
-    </div>
+    <p>Propulsé par <strong>Grenard App</strong></p>
+    <p style="font-size: 0.8em;"><a href="privacy.html" style="color: #888;">Confidentialité</a> | <a href="mailto:grenardapp@gmail.com" style="color: #888;">Contact Pro</a></p>
 </footer>
 
 </body>
